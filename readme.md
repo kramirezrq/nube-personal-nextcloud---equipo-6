@@ -90,6 +90,8 @@ Durante el desarrollo se verificó:
 
 [http://grupo6-nextcloud.duckdns.org
 ](http://3.129.51.85/login?redirect_url=/apps/files/files/175?dir%3D/Proyecto%2520SO)
+> Usuario: admin
+> Contraseña: ProyectoSO2026!
 ---
 
 ## Referencias
