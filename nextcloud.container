@@ -1,0 +1,24 @@
+[Unit]
+Description=Contenedor Nextcloud con Apache
+After=mariadb.service
+Requires=mariadb.service
+
+[Container]
+ContainerName=nextcloud
+Image=docker.io/library/nextcloud:31-apache
+Network=nextcloud-net
+PublishPort=80:80
+Volume=nextcloud_data:/var/www/html
+Environment=MYSQL_HOST=mariadb
+Environment=MYSQL_DATABASE=nextcloud
+Environment=MYSQL_USER=nextcloud
+Environment=MYSQL_PASSWORD=nextcloud123
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+
+
+

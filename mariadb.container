@@ -1,0 +1,21 @@
+[Unit]
+Description=Contenedor MariaDB para Nextcloud
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+ContainerName=mariadb
+Image=docker.io/library/mariadb:11.4
+Network=nextcloud-net
+Volume=mariadb_data:/var/lib/mysql
+Environment=MARIADB_DATABASE=nextcloud
+Environment=MARIADB_USER=nextcloud
+Environment=MARIADB_PASSWORD=nextcloud123
+Environment=MARIADB_ROOT_PASSWORD=rootnextcloud123
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+
